@@ -13,11 +13,6 @@ modules:
     install: []
     nvidia-driver: nvidia
     
-  - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
   - type: dnf
     repos:
       copr: 
@@ -48,10 +43,5 @@ modules:
       - msr-tools
       - topgrade
       - powertop
-
-    remove:
-      packages: []
-      
   - from-file: wunker.yml
-  
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing 
