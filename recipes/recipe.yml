@@ -18,30 +18,31 @@ modules:
       copr: 
         - shdwchn10/AllTheTools
     install:
-      - policycoreutils-python-utils
-      - nnn
-      - dmtcp
-      - libinput-utils
-      - openssl-devel
-      - lm_sensors
-      - hashcat
-      - stress
-      - cargo
-      - fd-find
-      - cmake
-      - meson
-      - gcc-c++
-      - gcc
-      - igt-gpu-tools
-      - uv
-      - zoxide
-      - kernel-tools
-      - tailscale
-      - bat
-      - eza
-      - zsh
-      - msr-tools
-      - topgrade
-      - powertop
+      packages:
+        - policycoreutils-python-utils
+        - nnn
+        - dmtcp
+        - libinput-utils
+        - openssl-devel
+        - lm_sensors
+        - hashcat
+        - stress
+        - cargo
+        - fd-find
+        - cmake
+        - meson
+        - gcc-c++
+        - gcc
+        - igt-gpu-tools
+        - uv
+        - zoxide
+        - kernel-tools
+        - tailscale
+        - bat
+        - eza
+        - zsh
+        - msr-tools
+        - topgrade
+        - powertop
   - from-file: wunker.yml
   - type: signing 
