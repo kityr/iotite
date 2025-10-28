@@ -1,17 +1,18 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: iotite
-# description will be included in the image's metadata
+
 description: This is my personal OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: quay.io/fedora-ostree-desktops/sway-atomic
 image-version: 42 # latest is also supported if you want new updates ASAP
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
+
+  - type: akmods
+    install: []
+    nvidia-driver: nvidia
+    
   - type: files
     files:
       - source: system
@@ -19,17 +20,38 @@ modules:
 
   - type: dnf
     repos:
-      copr: []
-    install: []
+      copr: 
+        - shdwchn10/AllTheTools
+    install:
+      - policycoreutils-python-utils
+      - nnn
+      - dmtcp
+      - libinput-utils
+      - openssl-devel
+      - lm_sensors
+      - hashcat
+      - stress
+      - cargo
+      - fd-find
+      - cmake
+      - meson
+      - gcc-c++
+      - gcc
+      - igt-gpu-tools
+      - uv
+      - zoxide
+      - kernel-tools
+      - tailscale
+      - bat
+      - eza
+      - zsh
+      - msr-tools
+      - topgrade
+      - powertop
+
     remove:
       packages: []
-
-  - type: default-flatpaks
-    configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: []
-      - scope: user # Also add Flathub user repo, but no user packages
-
+      
+  - from-file: wunker.yml
+  
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
