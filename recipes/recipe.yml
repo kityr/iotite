@@ -21,6 +21,8 @@ modules:
         - shdwchn10/AllTheTools
     install:
       packages:
+        - cockpit
+        - cockpit-podman
         - intel-undervolt
         - tailscale
         - policycoreutils-python-utils
