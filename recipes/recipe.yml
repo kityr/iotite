@@ -21,6 +21,7 @@ modules:
         - shdwchn10/AllTheTools
     install:
       packages:
+        - intel-undervolt
         - tailscale
         - policycoreutils-python-utils
         - nnn
