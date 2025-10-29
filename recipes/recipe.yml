@@ -15,10 +15,13 @@ modules:
     
   - type: dnf
     repos:
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       copr: 
         - shdwchn10/AllTheTools
     install:
       packages:
+        - tailscale
         - policycoreutils-python-utils
         - nnn
         - dmtcp
