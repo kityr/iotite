@@ -21,16 +21,17 @@ modules:
         - shdwchn10/AllTheTools
     install:
       packages:
+        - samba
         - cockpit
         - cockpit-podman
         - intel-undervolt
+        - msr-tools
         - tailscale
         - policycoreutils-python-utils
         - nnn
         - dmtcp
         - libinput-utils
         - openssl-devel
-        - lm_sensors
         - hashcat
         - stress
         - cargo
@@ -40,14 +41,15 @@ modules:
         - gcc-c++
         - gcc
         - igt-gpu-tools
+        - lm_sensors
         - uv
-        - zoxide
         - kernel-tools
         - tailscale
+        - zoxide
         - bat
         - eza
         - zsh
-        - msr-tools
+
         - topgrade
         - powertop
   - from-file: wunker.yml
