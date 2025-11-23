@@ -52,5 +52,5 @@ modules:
 
         - topgrade
         - powertop
-  - from-file: wunker.yml
+  #- from-file: wunker.yml
   - type: signing 
