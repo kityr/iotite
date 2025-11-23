@@ -5,7 +5,7 @@ name: iotite
 description: This is my personal OS image.
 
 base-image: quay.io/fedora-ostree-desktops/sway-atomic
-image-version: 43 # latest is also supported if you want new updates ASAP
+image-version: 43 
 
 modules:
 
@@ -21,6 +21,29 @@ modules:
         - shdwchn10/AllTheTools
     install:
       packages:
+        - zstd
+        - sbsign
+        - ffmpeg
+        - ffmpeg-libs
+        - fzf
+        - intel-vaapi-driver
+        - libavcodec
+        - libfdk-aac
+        - libheif
+        - libva-utils
+        - lshw
+        - net-tools
+        - nvme-cli
+        - nvtop
+        - openssl
+        - powerstat
+        - symlinks
+        - tcpdump
+        - tmux
+        - traceroute
+        - wireguard-tools
+        - intel-gmmlib
+        - libva-intel-media-driver
         - samba
         - cockpit
         - cockpit-podman
@@ -49,8 +72,7 @@ modules:
         - bat
         - eza
         - zsh
-
         - topgrade
         - powertop
-  #- from-file: wunker.yml
+
   - type: signing 
