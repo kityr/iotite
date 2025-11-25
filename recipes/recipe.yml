@@ -25,8 +25,6 @@ modules:
         - zstd
         - sbsign
         - fzf
-        - libheif
-        - libva-utils
         - lshw
         - net-tools
         - nvme-cli
@@ -38,8 +36,6 @@ modules:
         - tmux
         - traceroute
         - wireguard-tools
-        - intel-gmmlib
-        - intel-media-driver
         - samba
         - cockpit
         - cockpit-podman
@@ -70,16 +66,6 @@ modules:
         - zsh
         - topgrade
         - powertop
-    # remove:
-    #   packages:
-    #     - libswscale-free
-
-    # replace:
-    #   - from-repo: rpmfusion-free
-    #     install-weak-deps: false
-    #     packages:
-    #       - new: ffmpeg
-    #         old: ffmpeg-free
 
   - type: dnf
     repos:
@@ -89,4 +75,12 @@ modules:
       packages:
         - ffmpeg-libs
         - ffmpeg
+        - libheif
+        - libva-utils
+        - intel-gmmlib
+        - intel-media-driver
+        - libva-nvidia-driver
+    group-install:
+      packages:
+        multimedia
   - type: signing 
