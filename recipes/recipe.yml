@@ -14,24 +14,17 @@ modules:
     nvidia-driver: nvidia
 
   - type: dnf
-    install:
-      packages:
-        - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-43.noarch.rpm
-        - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-43.noarch.rpm
-    
-  - type: dnf
     repos:
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-        # - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-43.noarch.rpm
-        # - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-43.noarch.rpm
       copr: 
         - shdwchn10/AllTheTools
+      nonfree: rpmfusion
     install:
       packages:
         - zstd
         - sbsign
-        # - ffmpeg
+        - ffmpeg
         - fzf
         - libheif
         - libva-utils
@@ -78,15 +71,13 @@ modules:
         - zsh
         - topgrade
         - powertop
-    remove:
-      packages:
-        - libswscale-free
-    replace:
-      - from-repo: rpmfusion-free
-        install-weak-deps: false
-        packages:
-          - new: ffmpeg
-            old: ffmpeg-free
+
+    # replace:
+    #   - from-repo: rpmfusion-free
+    #     install-weak-deps: false
+    #     packages:
+    #       - new: ffmpeg
+    #         old: ffmpeg-free
 
 
   - type: signing 
