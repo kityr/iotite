@@ -24,7 +24,6 @@ modules:
       packages:
         - zstd
         - sbsign
-        #- ffmpeg
         - fzf
         - libheif
         - libva-utils
@@ -71,13 +70,25 @@ modules:
         - zsh
         - topgrade
         - powertop
+    # remove:
+    #   packages:
+    #     - libswscale-free
 
-    replace:
-      - from-repo: rpmfusion-free
-        install-weak-deps: false
-        packages:
-          - new: ffmpeg
-            old: ffmpeg-free
+    # replace:
+    #   - from-repo: rpmfusion-free
+    #     install-weak-deps: false
+    #     packages:
+    #       - new: ffmpeg
+    #         old: ffmpeg-free
 
-
+  - type: dnf
+    repos:
+      nonfree: rpmfusion
+    remove:
+      packages:
+        - ffmpeg-free
+        - libswscale-free
+    install:
+      packages:
+        - ffmpeg
   - type: signing 
