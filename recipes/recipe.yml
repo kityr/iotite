@@ -88,7 +88,9 @@ modules:
       packages:
         - ffmpeg-free
         - libswscale-free
+        - libswresample-free
     install:
       packages:
+        - ffmpeg-libs
         - ffmpeg
   - type: signing 
