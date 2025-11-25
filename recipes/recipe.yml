@@ -17,6 +17,8 @@ modules:
     repos:
       files:
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-43.noarch.rpm
+        - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-43.noarch.rpm
       copr: 
         - shdwchn10/AllTheTools
     install:
@@ -39,7 +41,7 @@ modules:
         - traceroute
         - wireguard-tools
         - intel-gmmlib
-        - libva-intel-media-driver
+        - intel-media-driver
         - samba
         - cockpit
         - cockpit-podman
@@ -70,29 +72,6 @@ modules:
         - zsh
         - topgrade
         - powertop
-    replace:
-      # mitigate upstream packaging bug: https://bugzilla.redhat.com/show_bug.cgi?id=2332429
-      # swap the incorrectly installed OpenCL-ICD-Loader for ocl-icd, the expected package
-      - from-repo: fedora
-        install-weak-deps: false
-        packages:
-          - new: ocl-icd
-            old: OpenCL-ICD-Loader
-    
-      # use override to replace mesa and others with less crippled versions
-      - from-repo: fedora-multimedia
-        install-weak-deps: false
-        packages:
-          - libva
-          - intel-vpl-gpu-rt
-          - intel-mediasdk
-          - mesa-dri-drivers
-          - mesa-filesystem
-          - mesa-libEGL
-          - mesa-libGL
-          - mesa-libgbm
-          - mesa-va-drivers
-          - mesa-vulkan-drivers
 
 
   - type: signing 
