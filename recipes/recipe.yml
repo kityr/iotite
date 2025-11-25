@@ -78,6 +78,9 @@ modules:
         - zsh
         - topgrade
         - powertop
+    remove:
+      packages:
+        - libswscale-free
     replace:
       - from-repo: rpmfusion-free
         install-weak-deps: false
