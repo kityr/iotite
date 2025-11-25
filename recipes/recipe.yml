@@ -84,13 +84,8 @@ modules:
   - type: dnf
     repos:
       nonfree: rpmfusion
-    remove:
-      packages:
-        - ffmpeg-free
-        - libswscale-free
-        - libswresample-free
-        - libavutil-free
     install:
+      allow-erasing: true
       packages:
         - ffmpeg-libs
         - ffmpeg
