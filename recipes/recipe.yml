@@ -82,5 +82,5 @@ modules:
         - libva-nvidia-driver
     group-install:
       packages:
-        multimedia
+        - multimedia
   - type: signing 
