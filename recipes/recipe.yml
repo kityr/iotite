@@ -89,6 +89,7 @@ modules:
         - ffmpeg-free
         - libswscale-free
         - libswresample-free
+        - libavutil-free
     install:
       packages:
         - ffmpeg-libs
