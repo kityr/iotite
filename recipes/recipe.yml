@@ -22,6 +22,7 @@ modules:
       nonfree: rpmfusion
     install:
       packages:
+        - nvtop
         - zstd
         - sbsign
         - fzf
