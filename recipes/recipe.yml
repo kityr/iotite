@@ -76,12 +76,12 @@ modules:
       packages:
         - ffmpeg-libs
         - ffmpeg
-        - libheif
+        #- libheif
         - libva-utils
         - intel-gmmlib
         - intel-media-driver
         - libva-nvidia-driver
-    group-install:
-      packages:
-        - multimedia
+    # group-install:
+    #   packages:
+    #     - multimedia
   - type: signing 
