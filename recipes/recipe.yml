@@ -9,9 +9,9 @@ image-version: 43
 
 modules:
 
-  - type: akmods
-    install: []
-    nvidia-driver: nvidia
+  # - type: akmods
+  #   install: []
+  #   nvidia-driver: nvidia
 
   - type: dnf
     repos:
