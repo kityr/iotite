@@ -22,6 +22,8 @@ modules:
       nonfree: rpmfusion
     install:
       packages:
+        - zoxide
+        - aria2
         - mkvtoolnix
         - mcrcon
         - nvtop
